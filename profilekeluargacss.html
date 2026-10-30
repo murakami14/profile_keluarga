@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Keluarga Fabio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #fff; }
+
+    header { text-align: center; padding: 30px 0; border-bottom: 4px solid #000; }
+    header h1 { font-size: 40px; }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 35px;
+      padding: 60px 0;
+    }
+
+    button { font-family: inherit; cursor: pointer; }
+
+    .menu {
+      display: block;
+      width: 60%;
+      padding: 22px 0;
+      background: #fff;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      color: #000;
+      border: 3px solid #000;
+      border-radius: 18px;
+    }
+    .menu:hover { background: #000; color: #fff; }
+
+    .profil { display: none; padding: 60px 120px; }
+    .profil.aktif { display: block; }
+    .profil h1 { font-size: 64px; margin-top: 80px; }
+
+    .data {
+      margin-top: 70px;
+      font-size: 30px;
+      line-height: 1.4;
+      list-style: none;
+    }
+
+    .kembali {
+      margin-top: 50px;
+      font-size: 20px;
+      background: none;
+      border: none;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="halaman-utama">
+    <header><h1>Profile Keluarga</h1></header>
+    <main>
+      <button class="menu" onclick="tampil('ayah')">Ayah</button>
+      <button class="menu" onclick="tampil('ibu')">Ibu</button>
+      <button class="menu" onclick="tampil('anak1')">Anak 1</button>
+      <button class="menu" onclick="tampil('anak2')">Anak 2</button>
+    </main>
+  </div>
+
+  <section class="profil" id="ayah">
+    <h1>Ayah</h1>
+    <ul class="data">
+      <li><strong>Nama lengkap:</strong> Indra Parlindra</li>
+      <li><strong>Hubungan Keluarga:</strong> Ayah</li>
+      <li><strong>Tempat, tanggal lahir:</strong> Kuningan 23 Oktober 1981</li>
+      <li><strong>Alamat:</strong> Perumahan Alam Asri, Kuningan</li>
+      <li><strong>Pekerjaan:</strong> Guru</li>
+      <li><strong>Hobi:</strong> Memelihara burung, bermain game</li>
+      <li><strong>Makanan favorit:</strong> Masakan buatan Ibu</li>
+    </ul>
+    <button class="kembali" onclick="tampil('halaman-utama')">← Kembali</button>
+  </section>
+
+  <section class="profil" id="ibu">
+    <h1>Ibu</h1>
+    <ul class="data">
+      <li><strong>Nama lengkap:</strong> Winny Sri Bintani</li>
+      <li><strong>Hubungan Keluarga:</strong> Ibu</li>
+      <li><strong>Tempat, tanggal lahir:</strong> Kuningan, 11 November 1981</li>
+      <li><strong>Alamat:</strong> Perumahan Alam Asri, Kuningan</li>
+      <li><strong>Pekerjaan:</strong> Ibu rumah tangga</li>
+      <li><strong>Hobi:</strong> Menonton film, scrolling</li>
+      <li><strong>Makanan favorit:</strong> Sayur-sayuran</li>
+    </ul>
+    <button class="kembali" onclick="tampil('halaman-utama')">← Kembali</button>
+  </section>
+
+  <section class="profil" id="anak1">
+    <h1>Anak 1</h1>
+    <ul class="data">
+      <li><strong>Nama lengkap:</strong> Fabio Alifabiandra</li>
+      <li><strong>Hubungan Keluarga:</strong> Anak pertama</li>
+      <li><strong>Tempat, tanggal lahir:</strong> Kuningan, 14 April 2007</li>
+      <li><strong>Alamat:</strong> Perumahan Golden Rose, Kuningan</li>
+      <li><strong>Pekerjaan:</strong> Mahasiswa</li>
+      <li><strong>Hobi:</strong> Menonton film, mendengarkan musik, bermain game</li>
+      <li><strong>Makanan favorit:</strong> Ayam geprek</li>
+    </ul>
+    <button class="kembali" onclick="tampil('halaman-utama')">← Kembali</button>
+  </section>
+
+  <section class="profil" id="anak2">
+    <h1>Anak 2</h1>
+    <ul class="data">
+      <li><strong>Nama lengkap:</strong> Sergio Alleaniandra</li>
+      <li><strong>Hubungan Keluarga:</strong> Anak kedua</li>
+      <li><strong>Tempat, tanggal lahir:</strong> Kuningan, 15 Juni 2013</li>
+      <li><strong>Alamat:</strong> Perumahan Alam Asri, Kuningan</li>
+      <li><strong>Pekerjaan:</strong> Pelajar</li>
+      <li><strong>Hobi:</strong> Bermain game, scrolling</li>
+      <li><strong>Makanan favorit:</strong> Ayam goreng</li>
+    </ul>
+    <button class="kembali" onclick="tampil('halaman-utama')">← Kembali</button>
+  </section>
+
+  <script>
+    function tampil(id) {
+      document.getElementById('halaman-utama').style.display = (id === 'halaman-utama') ? 'block' : 'none';
+      var profil = document.querySelectorAll('.profil');
+      for (var i = 0; i < profil.length; i++) {
+        profil[i].classList.remove('aktif');
+      }
+      if (id !== 'halaman-utama') {
+        document.getElementById(id).classList.add('aktif');
+      }
+    }
+  </script>
+
+</body>
+</html>
